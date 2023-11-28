@@ -1,0 +1,48 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>User Mananger</span>
+</mat-toolbar>
+
+<mat-drawer-container class="drawer-container">
+  <mat-drawer
+    class="drawer-content"
+    #drawer
+    mode="side"
+    [opened]="isSmallScreen$ | async"
+  >
+    <a
+      class="menu-button"
+      mat-button
+      routerLink="/"
+      routerLinkActive="menu-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="drawer.toggle()"
+    >
+      <mat-icon>home</mat-icon>
+      Home
+    </a>
+    <a
+      class="menu-button"
+      mat-button
+      routerLink="/users"
+      routerLinkActive="menu-active"
+      (click)="drawer.toggle()"
+    >
+      <mat-icon>person</mat-icon>
+      Usuarios
+    </a>
+  </mat-drawer>
+
+  <div class="main-container">
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</mat-drawer-container>
+
+<div class="footer">
+  <span>2023 Universidad Ricardo Palma</span>
+  <span>©Todos los derechos reservados</span>
+</div>

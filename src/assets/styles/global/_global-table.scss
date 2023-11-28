@@ -1,0 +1,16 @@
+.data-table {
+  position: relative;
+  background-color: var(--mat-table-background-color);
+  padding: 0.5rem;
+
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+
+    .table-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
